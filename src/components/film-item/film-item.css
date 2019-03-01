@@ -1,0 +1,13 @@
+.card:hover .close-film-item{
+  display:block;
+}
+.card-header{
+  position: relative;
+}
+
+.close-film-item{
+  display:none;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}

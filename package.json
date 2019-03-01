@@ -1,0 +1,43 @@
+{
+  "name": "films",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "del": "^3.0.0",
+    "express": "^4.16.4",
+    "flickrapi": "^0.6.0",
+    "formidable": "^1.2.1",
+    "lokijs": "^1.5.6",
+    "multer": "^1.4.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-redux": "^6.0.1",
+    "react-scripts": "2.1.5",
+    "redux": "^4.0.1",
+    "redux-promise-middleware": "^6.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "nodemon server.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "author": "",
+  "license": "ISC"
+}
