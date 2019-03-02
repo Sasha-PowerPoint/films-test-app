@@ -3,10 +3,6 @@ import './file-upload-form.css';
 import { uploadFile, setListLoading, getFilmsList, hideUploadForm } from '../../action-creators/actions';
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => ({
-  ...state
-});
-
 const mapDispatchToProps = (dispatch) => ({
   uploadFile: (formData) => dispatch(uploadFile(formData)),
   setListLoading: () => dispatch(setListLoading()),
@@ -49,4 +45,4 @@ class FileUploadfForm extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FileUploadfForm);
+export default connect(null, mapDispatchToProps)(FileUploadfForm);

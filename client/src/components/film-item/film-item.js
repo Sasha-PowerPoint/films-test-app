@@ -16,9 +16,6 @@ class FilmItem extends Component {
     console.log(el.id);
     setListLoading();
     deleteFilm(el.id);
-    console.log(window.location.href);
-    console.log(window.location.hostname);
-    console.log(window.location.protocol);
   }
 
   render() {
@@ -26,10 +23,10 @@ class FilmItem extends Component {
 
     return (
       <div className="card text-white bg-primary mb-3 film-item">
-        
         <div className="card-header">
           <button type="button" class="close close-film-item" data-dismiss="alert"
-            onClick={this.onCross}>&times;</button></div>
+            onClick={this.onCross}>&times;</button>
+        </div>
         <div className="card-body">
           <h4 className="card-title">{el.title}, {el.release_year}</h4>
           <div className="">Format:</div>

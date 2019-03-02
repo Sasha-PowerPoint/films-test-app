@@ -3,10 +3,6 @@ import { uploadFile, setListLoading, getFilmsList, hideAddForm, addFilm} from '.
 import { connect } from 'react-redux';
 import './add-film-form.css';
 
-const mapStateToProps = (state) => ({
-  ...state
-});
-
 const mapDispatchToProps = (dispatch) => ({
   uploadFile: (formData) => dispatch(uploadFile(formData)),
   setListLoading: () => dispatch(setListLoading()),
@@ -60,4 +56,4 @@ class AddFilmForm extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddFilmForm);
+export default connect(null, mapDispatchToProps)(AddFilmForm);

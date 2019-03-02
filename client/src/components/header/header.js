@@ -5,7 +5,8 @@ import FileUploadForm from '../file-upload-form';
 import AddFilmForm from '../add-film-form';
 
 const mapStateToProps = (state) => ({
-  ...state
+  show_upload_form : state.show_upload_form,
+  show_add_form : state.show_add_form
 });
 
 const mapDispatchToProps = (dispatch) =>({
@@ -26,7 +27,6 @@ class Header extends Component {
   };
 
   UploadFilms = () => {
-    //filmAPI.getFilms().then((json) => console.log(json));
     this.props.showUploadForm();
   };
 
@@ -35,6 +35,8 @@ class Header extends Component {
   }
 
   render() {
+    const {show_add_form, show_upload_form} = this.props;
+
     return (
       <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -48,9 +50,9 @@ class Header extends Component {
         <i className="fas fa-plus-square"
             onClick={this.AddFilm}></i>
       </nav>
-      {this.props.show_upload_form ?
-      <FileUploadForm/> : null}
-      {this.props.show_add_form ?
+      {show_upload_form ?
+        <FileUploadForm/> : null}
+      {show_add_form ?
         <AddFilmForm/> : null}
       </>
     )

@@ -5,7 +5,10 @@ import './films-list.css';
 import FilmItem from '../film-item';
 
 const mapStateToProps = (state) => ({
-    ...state
+    titleFilter : state.titleFilter,
+    starFilter : state.starFilter,
+    films_list : state.films_list,
+    list_loading : state.list_loading
 })
 
 
@@ -14,25 +17,27 @@ class FilmsList extends Component {
     
 
     passFilter = (el) => {
-        if (this.props.titleFilter) {
 
-        }
-        return (this.props.titleFilter ?
-            el.title.toLowerCase().indexOf(this.props.titleFilter.toLowerCase()) !== -1
-            : true)
+        const {titleFilter, starFilter} = this.props;
+
+        return (titleFilter ?
+                el.title.toLowerCase().indexOf(titleFilter.toLowerCase()) !== -1
+                : true)
             &&
-            (this.props.starFilter ?
+                (starFilter ?
                 el.stars.some(
                     (star) => {
-                        console.log(star.toLowerCase().indexOf(this.props.starFilter.toLowerCase()) !== -1);
-                        return star.toLowerCase().indexOf(this.props.starFilter.toLowerCase()) !== -1
+                        return star.toLowerCase().indexOf(starFilter.toLowerCase()) !== -1
                     }
                 )
                 : true);
     }
 
     createList = () => {
-        return this.props.films_list.map((el) =>
+
+        const {films_list} = this.props;
+
+        return films_list.map((el) =>
             this.passFilter(el) ?
                 <FilmItem key={el.id} el={el}/> :
                 null

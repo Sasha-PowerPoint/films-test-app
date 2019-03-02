@@ -18,19 +18,19 @@ app.post('/upload', function (req, res, next) {
 
   form.on('fileBegin', function (name, file) {
     file.path = __dirname + "/Films.txt";
-    console.log(__dirname + "/Films.txt");
   });
 
   form.on('file', function (name, file) {
     if(isTxt(file.name)){
+      console.log(isTxt(file.name));
       try {
-        writeToFile("Films.json", TxtToJson(fileread("Films.txt")), () =>  res.send(fileread("Films.json")))
+        writeToFile("Films.json", JSON.stringify(SortArrByTitleKey(JSON.parse(TxtToJson(fileread("Films.txt"))))), () =>  res.send(fileread("Films.json")))
       } catch (err) {
         res.send(JSON.stringify({ err: err.message }));
       }
     }else{
       try {
-        writeToFile("Films.json", TxtToJson(fileread("Films.txt")), () =>  res.send(fileread("Films.json")))
+        writeToFile("Films.json", JSON.stringify(SortArrByTitleKey(JSON.parse(TxtToJson(fileread("Films.txt"))))), () =>  res.send(fileread("Films.json")))
       } catch (err) {
         res.send(JSON.stringify({ err: "Type do not match" }));
       }
@@ -87,7 +87,7 @@ function TxtToJson(txt) {
       title: el[0].replace("Title: ", ""),
       release_year: el[1].replace("Release Year: ", ""),
       format: el[2].replace("Format: ", ""),
-      stars: el[3].replace("Stars: ", "").replace(" ", "").split(","),
+      stars: el[3].replace("Stars: ", "").split(","),
     })));
 }
 
