@@ -19,6 +19,10 @@ export const reducer = (state, action) => {
       return { ...state, show_add_form: false };
     case "SHOW_ADD_FORM":
       return { ...state, show_add_form: true };
+    case "BAN_SUBMIT_BUTTON":
+      return { ...state, allow_submit_button: false };
+    case "ALLOW_SUBMIT_BUTTON":
+      return { ...state, allow_submit_button: true };
     case "UPLOAD_FILE_FULFILLED":
       if (!action.payload.err) {
         return { ...state, films_list: [...action.payload], list_loading: false };

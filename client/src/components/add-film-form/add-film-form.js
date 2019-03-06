@@ -35,20 +35,20 @@ class AddFilmForm extends Component {
     return (
       <div className="form-group">
         <div className="form">
-          <button type="button" class="close close-add-film" data-dismiss="alert"
+          <button type="button" className="close close-add-film" data-dismiss="alert"
                   onClick={this.hideForm}>&times;</button>
-          <h5 for="inputDefault">Title</h5>
-          <input type="text" ref={(node) => this.title = node} className="form-control" id="inputDefault" />
-          <small id="emailHelp" className="form-text text-muted">Example: World War</small>
-          <h5 for="inputDefault">Release Year</h5>
-          <input type="text" ref={(node) => this.release_year = node} className="form-control" id="inputDefault" />
-          <small id="emailHelp" className="form-text text-muted">Example: 1935</small>
-          <h5 for="inputDefault">Format</h5>
-          <input type="text" ref={(node) => this.format = node} className="form-control" id="inputDefault" />
-          <small id="emailHelp" className="form-text text-muted">Example: DVD</small>
-          <h5 for="inputDefault">Stars</h5>
-          <textarea type="text" ref={(node) => this.stars = node} className="form-control" id="inputDefault" />
-          <small id="emailHelp" className="form-text text-muted">Example: Mike Foo, Joe Bar </small>
+          <h5>Title</h5>
+          <input type="text" ref={(node) => this.title = node} className="form-control"/>
+          <small className="form-text text-muted">Example: World War</small>
+          <h5>Release Year</h5>
+          <input type="text" ref={(node) => this.release_year = node} className="form-control"/>
+          <small className="form-text text-muted">Example: 1935</small>
+          <h5>Format</h5>
+          <input type="text" ref={(node) => this.format = node} className="form-control"/>
+          <small className="form-text text-muted">Example: DVD</small>
+          <h5>Stars</h5>
+          <textarea ref={(node) => this.stars = node} className="form-control"/>
+          <small className="form-text text-muted">Example: Mike Foo, Joe Bar </small>
           <button type="submit" className="btn btn-info" onClick={this.acceptAdding}>Add</button>
         </div>
       </div>

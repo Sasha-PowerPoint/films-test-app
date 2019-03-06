@@ -11,3 +11,5 @@ export const hideAddForm = () => ({type: "HIDE_ADD_FORM"});
 export const hideUploadForm = () => ({type: "HIDE_UPLOAD_FORM"});
 export const uploadFile = (formData) => ({type: "UPLOAD_FILE", payload: filmsAPI.uploadFile(formData).then(json => json)});
 export const addFilm = (filmObj) => ({type: "ADD_FILM", payload: filmsAPI.addFilm(filmObj).then(json => json)});
+export const banSubmitButton = () => ({type: "BAN_SUBMIT_BUTTON"});
+export const allowSubmitButton = () => ({type: "ALLOW_SUBMIT_BUTTON"});

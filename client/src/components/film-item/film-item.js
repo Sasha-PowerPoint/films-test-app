@@ -24,7 +24,7 @@ class FilmItem extends Component {
     return (
       <div className="card text-white bg-primary mb-3 film-item">
         <div className="card-header">
-          <button type="button" class="close close-film-item" data-dismiss="alert"
+          <button type="button" className="close close-film-item" data-dismiss="alert"
             onClick={this.onCross}>&times;</button>
         </div>
         <div className="card-body">
