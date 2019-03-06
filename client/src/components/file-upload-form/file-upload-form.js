@@ -50,6 +50,9 @@ class FileUploadfForm extends Component {
   }
 
   render() {
+
+    const {allow_submit_button} = this.props;
+
     return (
       <div className="form-group">
         <form className="form"
@@ -67,10 +70,8 @@ class FileUploadfForm extends Component {
           <small id="fileHelp" class="form-text text-muted">This field can help you to convert your file to our storage, so you can browse your favourite films anytime. Load only '.txt' files</small>
           <input type="submit" 
                 onClick={this.handleSubmitClick}
-                className={`btn ${this.props.allow_submit_button ? "btn-info" : "btn-outline-danger"} upload_submit_button`}/> 
-          {!this.props.allow_submit_button ?
-          <small id="fileHelp" className="form-text text-danger">Wrong file type! Allowed type: .txt</small>:
-          null}
+                className={`btn ${allow_submit_button === undefined || allow_submit_button ? "btn-info" : "btn-outline-danger"} upload_submit_button`}/> 
+          <ErrMessage show={allow_submit_button}/>
         </form>
       </div>
     )
@@ -78,3 +79,10 @@ class FileUploadfForm extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FileUploadfForm);
+
+const ErrMessage = ({show}) => {
+  console.log(show);
+  return show !== undefined && !show ?
+            <small id="fileHelp" className="form-text text-danger">Wrong file type! Allowed type: .txt</small>:
+        null
+}
